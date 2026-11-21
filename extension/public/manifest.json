@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Contextly - AI Browser Companion",
+  "version": "1.0.1",
+  "description": "Your AI browser companion for General Chat, Contextual Chat, and DevTools Network/Console analysis.",
+  "permissions": [
+    "sidePanel",
+    "contextMenus",
+    "storage",
+    "activeTab"
+  ],
+  "action": {
+    "default_title": "Contextly",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "devtools_page": "devtools.html",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

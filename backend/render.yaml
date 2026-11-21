@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: contextly-backend
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: AI_PROVIDER
+        value: gemini
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash
+      - key: CORS_ORIGIN
+        value: "*"
+      - key: RATE_LIMIT_MAX
+        value: 100
+      - key: RATE_LIMIT_WINDOW_MS
+        value: 60000
+      - key: MAX_CONTEXT_CHAR_LIMIT
+        value: 12000
+      # Set these secret values in Render Dashboard manually:
+      # GEMINI_API_KEY
+      # MONGO_URI

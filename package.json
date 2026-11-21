@@ -1,0 +1,18 @@
+{
+  "name": "contextly",
+  "version": "1.0.0",
+  "description": "Contextly - AI Browser Companion Chrome Extension with General & Contextual Chat",
+  "scripts": {
+    "install:all": "npm install && cd backend && npm install && cd ../extension && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:extension": "cd extension && npm run dev",
+    "build:backend": "cd backend && npm run build",
+    "build:extension": "cd extension && npm run build",
+    "build": "npm run build:backend && npm run build:extension",
+    "test:backend": "cd backend && npm test",
+    "test": "npm run test:backend"
+  },
+  "keywords": ["chrome-extension", "ai", "gemini", "deepseek", "side-panel", "react", "contextual-ai"],
+  "author": "Contextly Team",
+  "license": "MIT"
+}
